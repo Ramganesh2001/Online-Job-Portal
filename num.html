@@ -1,0 +1,28 @@
+    <html>
+<head>
+<title>UPDATE PROCESS</title>
+</head> 
+<body>
+<?php
+$conn=mysqli_connect("localhost","root","","Crud");
+$empid=$_POST['empid'];
+$empname=$_POST['empname'];
+$salary=$_POST['salary']; 
+$query="UPDATE emp SET
+empid='$empid',empname='$empname',salary='$salary'
+where empid='$empid' or empname='$empname'or
+salary='$salary'";
+$result=$conn->query($query);
+if($result)
+{ 
+echo "Updated Sucessfully..... <BR>";
+} 
+else 
+{
+echo "Updation error....";
+} 
+?>
+<a href="home.php">HOME</a>
+</body> 
+</center>
+</html>
